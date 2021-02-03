@@ -4,6 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <router-view>
     <List msg="Welcome to Your Vue.js App"/>
+    <RegisterPhoto msg="顔写真登録画面"/>
     </router-view>
   </div>
 </template>

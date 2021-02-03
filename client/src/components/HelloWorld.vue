@@ -20,6 +20,7 @@
       <b-button type="reset" variant="danger">Reset</b-button>
       <b-button type="here" variant="primary"></b-button>
       <router-link to="/list">こちらへ</router-link>
+      <router-link to="/register_photo">顔写真登録画面へ</router-link>
     </b-form>
   </div>
   
