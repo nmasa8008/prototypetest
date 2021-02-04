@@ -32,14 +32,14 @@ export default {
     msg: String
   },
   data() {
-      return {
-        form: {
-          name: '',
-        },
-        show: true,
-        message:'',
-      }
-    },
+    return {
+      form: {
+        name: '',
+      },
+      show: true,
+      message:'',
+    }
+  },
     methods: {
       onSubmit(event) {
         event.preventDefault()
