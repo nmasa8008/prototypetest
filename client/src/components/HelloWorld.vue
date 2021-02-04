@@ -19,7 +19,7 @@
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
       <b-button type="here" variant="primary"></b-button>
-      <router-link to="/list">こちらへ</router-link>
+      <router-link to="/Devicelist">こちらへ</router-link>
     </b-form>
   </div>
   
