@@ -31,7 +31,7 @@ export default {
   props: {
     msg: String
   },
-   data() {
+  data() {
       return {
         form: {
           name: '',
@@ -43,7 +43,7 @@ export default {
     methods: {
       onSubmit(event) {
         event.preventDefault()
-         const created = async () => {
+          const created = async () => {
           const method = "POST";
           const body = JSON.stringify(this.form);
           const headers = {
@@ -60,8 +60,8 @@ export default {
           }
         }
         created();
-  },
       },
+    },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
@@ -72,7 +72,7 @@ export default {
           this.show = true
         })
       },
-       onHere(event) {
+      onHere(event) {
         event.preventDefault()
         // Reset our form values
         this.form.name = ''
