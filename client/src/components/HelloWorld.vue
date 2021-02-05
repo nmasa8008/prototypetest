@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Welcome{{message }}</h2>
+    <h2>Welcome{{responseData }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -22,7 +22,7 @@
       <router-link to="/list">こちらへ</router-link>
     </b-form>
   </div>
-  
+
 </template>
 
 <script>
@@ -52,9 +52,12 @@ export default {
           };
           const res = await fetch("index/test", {method, headers, body});
           if (res.ok) {
-            const responseMessage = await res.json();
-            const parsMessage = JSON.parse(responseMessage)
-            this.message = parsMessage.message;
+            const responseData = await res.json();
+            // const parsMessage = JSON.parse(responseMessage)
+            console.log(responseData);
+            console.log(responseData[0]);
+            return responseData;
+
           } else {
             this.message = 'failed';
           }
