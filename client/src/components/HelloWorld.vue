@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Welcome{{message }}</h2>
+    <h2>Welcome{{responseData }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -19,10 +19,16 @@
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
       <b-button type="here" variant="primary"></b-button>
+<<<<<<< HEAD
       <router-link to="/Devicelist">こちらへ</router-link>
+=======
+      <b-button @click="login" type="button" variant="primary">login</b-button>
+      <b-button @click="logout" type="button" variant="primary">logout</b-button>
+      <router-link to="/login_check">ログインチェック</router-link>
+>>>>>>> upstream/dev
     </b-form>
   </div>
-  
+
 </template>
 
 <script>
@@ -31,19 +37,33 @@ export default {
   props: {
     msg: String
   },
-   data() {
-      return {
-        form: {
-          name: '',
-        },
-        show: true,
-        message:'',
-      }
-    },
+  data() {
+    return {
+      form: {
+        name: '',
+      },
+      show: true,
+      message:'',
+    }
+  },
     methods: {
+      login() {
+        this.$store.dispatch('user/login')
+        this.$nextTick(() => {
+          alert(`you have logged in!\nplease click 'ログインチェック'`)
+          console.log('logged in')
+        })
+      },
+      logout() {
+        this.$store.dispatch('user/logout')
+        this.$nextTick(() => {
+          alert(`you have logged out`)
+          console.log('logged out')
+        })
+      },
       onSubmit(event) {
         event.preventDefault()
-         const created = async () => {
+          const created = async () => {
           const method = "POST";
           const body = JSON.stringify(this.form);
           const headers = {
@@ -52,16 +72,19 @@ export default {
           };
           const res = await fetch("index/test", {method, headers, body});
           if (res.ok) {
-            const responseMessage = await res.json();
-            const parsMessage = JSON.parse(responseMessage)
-            this.message = parsMessage.message;
+            const responseData = await res.json();
+            // const parsMessage = JSON.parse(responseMessage)
+            console.log(responseData);
+            console.log(responseData[0]);
+            return responseData;
+
           } else {
             this.message = 'failed';
           }
         }
         created();
-  },
       },
+    },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
@@ -72,7 +95,7 @@ export default {
           this.show = true
         })
       },
-       onHere(event) {
+      onHere(event) {
         event.preventDefault()
         // Reset our form values
         this.form.name = ''

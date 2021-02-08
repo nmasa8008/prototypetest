@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "bootprint": "^4.0.4",
+    "bootprint-openapi": "^4.0.4",
+    "redoc": "^2.0.0-rc.48",
+    "redoc-cli": "^0.10.3"
+  }
+}

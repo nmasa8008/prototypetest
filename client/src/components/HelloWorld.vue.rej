@@ -1,0 +1,9 @@
+diff a/client/src/components/HelloWorld.vue b/client/src/components/HelloWorld.vue	(rejected hunks)
+@@ -19,7 +19,6 @@
+       <b-button type="submit" variant="primary">Submit</b-button>
+       <b-button type="reset" variant="danger">Reset</b-button>
+       <b-button type="here" variant="primary"></b-button>
+-      <router-link to="/list">こちらへ</router-link>
+       <b-button @click="login" type="button" variant="primary">login</b-button>
+       <b-button @click="logout" type="button" variant="primary">logout</b-button>
+       <router-link to="/login_check">ログインチェック</router-link>
