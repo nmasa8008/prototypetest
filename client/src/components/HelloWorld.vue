@@ -19,7 +19,9 @@
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
       <b-button type="here" variant="primary"></b-button>
-      <router-link to="/list">こちらへ</router-link>
+      <b-button @click="login" type="button" variant="primary">login</b-button>
+      <b-button @click="logout" type="button" variant="primary">logout</b-button>
+      <router-link to="/login_check">ログインチェック</router-link>
     </b-form>
   </div>
 
@@ -31,19 +33,33 @@ export default {
   props: {
     msg: String
   },
-   data() {
-      return {
-        form: {
-          name: '',
-        },
-        show: true,
-        message:'',
-      }
-    },
+  data() {
+    return {
+      form: {
+        name: '',
+      },
+      show: true,
+      message:'',
+    }
+  },
     methods: {
+      login() {
+        this.$store.dispatch('user/login')
+        this.$nextTick(() => {
+          alert(`you have logged in!\nplease click 'ログインチェック'`)
+          console.log('logged in')
+        })
+      },
+      logout() {
+        this.$store.dispatch('user/logout')
+        this.$nextTick(() => {
+          alert(`you have logged out`)
+          console.log('logged out')
+        })
+      },
       onSubmit(event) {
         event.preventDefault()
-         const created = async () => {
+          const created = async () => {
           const method = "POST";
           const body = JSON.stringify(this.form);
           const headers = {
@@ -63,8 +79,8 @@ export default {
           }
         }
         created();
-  },
       },
+    },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
@@ -75,7 +91,7 @@ export default {
           this.show = true
         })
       },
-       onHere(event) {
+      onHere(event) {
         event.preventDefault()
         // Reset our form values
         this.form.name = ''
