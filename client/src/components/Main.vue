@@ -1,6 +1,6 @@
 <template>
 <div class='hello'>
-  <div class='saide'>
+  <div class='side-bar'>
     <SideBar/>
   </div>
   <div class='main'>
@@ -25,7 +25,7 @@ export default {
   justify-content: space-between;
 }
 
-.saide{
+.side-bar{
   width: 20%;
   height: 100%;
 }
