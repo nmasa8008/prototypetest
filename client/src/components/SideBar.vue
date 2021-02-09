@@ -11,6 +11,7 @@
               <b-nav-item active >Active</b-nav-item>
               <b-nav-item  @click="linkList">list</b-nav-item>
               <b-nav-item  @click="linkHello">HelloWorld</b-nav-item>
+              <b-nav-item  @click="linkDevicelist">Devicelist</b-nav-item>
             </b-nav>
           </nav>
         </div>
@@ -28,6 +29,9 @@ export default {
     },
     linkHello(){
       this.$router.push('/')
+    },
+    linkDevicelist(){
+      this.$router.push('/DeviceList')
     },
   }
 }

@@ -22,18 +22,12 @@
       </b-form-group>
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
-<<<<<<< HEAD
-      <b-button type="here" variant="primary"></b-button>
-<<<<<<< HEAD
-      <router-link to="/Devicelist">こちらへ</router-link>
-=======
+
       <b-button @click="login" type="button" variant="primary">login</b-button>
       <b-button @click="logout" type="button" variant="primary">logout</b-button>
       <router-link to="/login_check">ログインチェック</router-link>
->>>>>>> upstream/dev
-=======
-      <router-link to="/list">こちらへ</router-link>
->>>>>>> dev
+
+
     </b-form>
   </div>
 </div>

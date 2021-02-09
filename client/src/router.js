@@ -1,26 +1,16 @@
 import Vue from "vue";
 import Router from "vue-router";
-<<<<<<< HEAD
 
-import LoginCheck from "./components/LoginCheck.vue";
-=======
 import List from "./components/List.vue";
 import Main from "./components/Main.vue";
 import Hello from "./components/HelloWorld.vue";
->>>>>>> dev
+import Devicelist from "./components/DeviceList.vue";
 
 Vue.use(Router);
 export default new Router({
   mode: "history",
   routes: [
-<<<<<<< HEAD
-      {
 
-        path: '/login_check',
-        component: LoginCheck
-      },
->>>>>>> upstream/dev
-=======
        {
         path: '/list',
         component: List
@@ -31,7 +21,11 @@ export default new Router({
       }, {
         path: '/main',
         component: Main
+      },
+      {
+        path: '/DeviceList',
+        component: Devicelist
       }
->>>>>>> dev
+
   ]
 });
