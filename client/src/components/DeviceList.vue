@@ -39,15 +39,13 @@
       </b-col>
 
     </b-row>
-    <p>
+    <div class = "tuika">
       <b-button href = "/">追加</b-button><!--編集画面に遷移-->
-    </p>
+    </div>
     <!-- Main table element -->
     <b-table
       :items="items"
       :fields="fields"
-      :current-page="currentPage"
-      :per-page="perPage"
       :filter="filter"
       :filter-included-fields="filterOn"
       :sort-by.sync="sortBy"
@@ -183,11 +181,15 @@
   margin: 10px 0 0;
 }
 .item2{
-  margin: 10px 0 0;
+  margin: 30px 0 0;
 }
 
 .my-1{
   margin: 190px 0 0;
+}
+.tuika{
+  text-align: left;
+  font-size: 40px;
 }
 
 .container {
