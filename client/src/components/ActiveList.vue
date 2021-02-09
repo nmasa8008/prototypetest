@@ -2,7 +2,7 @@
  <div>
    <h1>LIST!!!!!!!!!!!!</h1>
     <b-container fluid>
- <template #cell(name)="row">
+      <template #cell(name)="row">
         {{ row.value.first }} {{ row.value.last }}
       </template>
 
