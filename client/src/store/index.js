@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import user from './modules/user'
+import list from './modules/list'
 
 Vue.use(Vuex); // Vue で使えるようにアクティベート
 
@@ -24,6 +25,9 @@ const store = new Vuex.Store({
     // actions
   },
    */
+    modules: {
+        list
+      },
 });
 
 export default store;
