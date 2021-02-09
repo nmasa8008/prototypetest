@@ -12,6 +12,7 @@ const store = new Vuex.Store({
   devtools: process.env.NODE_ENV !== 'production',
   modules: {
     user,
+    list
   },
   // NOTE: このファイルでこれらが必要かどうかはよく分からない。
   /*
@@ -25,9 +26,6 @@ const store = new Vuex.Store({
     // actions
   },
    */
-    modules: {
-        list
-      },
 });
 
 export default store;
