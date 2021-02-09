@@ -4,7 +4,7 @@
       <template >
         <div class="p-3">
           <p>
-          サイドバーだよ
+          （ここにロゴが入ります）
           </p>
           <nav class="mb-3">
             <b-nav vertical>
