@@ -1,7 +1,7 @@
 <template>
 <div class="hello">
   <div class="saide">
-    <SaideBar/>
+    <SideBar/>
   </div>
   <div class="main">
     <h1>{{ msg }}</h1>
@@ -30,9 +30,9 @@
 
 <script>
 
-import SaideBar from './SaideBar';
+import SideBar from './SideBar';
 export default {
-  components: { SaideBar },
+  components: { SideBar },
   name: 'HelloWorld',
   props: {
     msg: String

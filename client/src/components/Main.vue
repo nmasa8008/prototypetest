@@ -1,7 +1,7 @@
 <template>
 <div class='hello'>
   <div class='saide'>
-    <SaideBar/>
+    <SideBar/>
   </div>
   <div class='main'>
     <ActiveList/>
@@ -11,9 +11,9 @@
 
 <script>
 import ActiveList from './ActiveList.vue';
-import SaideBar from './SaideBar';
+import SideBar from './SideBar';
 export default {
-  components: { ActiveList,SaideBar },
+  components: { ActiveList,SideBar },
   name: 'Main',
    }
   
