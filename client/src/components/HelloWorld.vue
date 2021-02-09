@@ -1,5 +1,9 @@
 <template>
-  <div class="hello">
+<div class="hello">
+  <div class="saide">
+    <SaideBar/>
+  </div>
+  <div class="main">
     <h1>{{ msg }}</h1>
     <h2>Welcome{{responseData }}</h2>
     <p>
@@ -21,11 +25,14 @@
       <router-link to="/list">こちらへ</router-link>
     </b-form>
   </div>
-
+</div>
 </template>
 
 <script>
+
+import SaideBar from './SaideBar';
 export default {
+  components: { SaideBar },
   name: 'HelloWorld',
   props: {
     msg: String
@@ -102,5 +109,20 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.hello {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saide{
+  width: 20%;
+  height: 100%;
+}
+.main{
+  width: 90%;
+  height: 100%;
+  margin-right: 2%;
 }
 </style>

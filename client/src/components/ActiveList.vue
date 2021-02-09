@@ -17,10 +17,6 @@
       Selected Rows:<br>
       {{ infoModal }}
   </p>
-   <p>
-      Rows:<br>
-      {{ userData }}
-  </p>
   </b-container>
   </div>
 </template>

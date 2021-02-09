@@ -1,5 +1,9 @@
 <template>
   <div class="hello">
+    <div class="saide">
+      <SaideBar/>
+    </div>
+    <div class="main">
     <h1>{{ msg }}</h1>
     <h2>Welcome{{message }}</h2>
 
@@ -16,11 +20,14 @@
       <b-button type="reset" variant="danger">Reset</b-button>
       <router-link to="/main">こちらへ</router-link>
     </b-form>
+    </div>
   </div>
 </template>
 
 <script>
+import SaideBar from './SaideBar';
 export default {
+  components: { SaideBar },
   name: 'List',
   props: {
     msg: String
@@ -94,5 +101,19 @@ li {
 }
 a {
   color: #42b983;
+}
+.hello {
+  display: flex;
+  justify-content: space-between;
+}
+
+.saide{
+  width: 20%;
+  height: 100%;
+}
+.main{
+  width: 90%;
+  height: 100%;
+  margin-right: 2%;
 }
 </style>
