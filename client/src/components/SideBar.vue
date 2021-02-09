@@ -1,5 +1,6 @@
 <template>
   <div>
+    <b-button v-b-toggle.sidebar-no-header>Toggle Sidebar</b-button>
     <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-slide visible='true'>
       <template >
         <div class="p-3">

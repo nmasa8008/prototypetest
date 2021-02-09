@@ -1,11 +1,19 @@
 <template>
 <b-container fluid>
+  <SideBar/>
     <!-- User Interface controls -->
-      <h1>
+    <div class="container">
+      <div class = "item1">
         【デバッグ用】機器一覧
-      </h1>
-    
-    <b-row>
+      <div>
+                           
+      </div> 
+      </div>
+          <div class = "item2">
+        プロジェクトA
+      </div>
+    </div>
+    <b-row >
       <b-col lg="6" class="my-1">
         <b-form-group
           label="Filter"
@@ -81,7 +89,14 @@
 </template>
 
 <script>
+  import SideBar from './SideBar';
+
   export default {
+    components: { SideBar },
+    name: 'HelloWorld',
+    props: {
+    msg: String
+    },
     data() {
       return {
         items: [
@@ -104,11 +119,11 @@
           { isActive: false, age: 26, name: { first: 'Mitzi', last: 'Navarro' } },
         ],
         fields: [
-          { key: 'name', label: '顧客名', sortable: true, sortDirection: 'desc' },
-          { key: 'age', label: 'Person age所在地', sortable: true, class: 'text-center' },
+          { key: 'name', label: '機器名', sortable: true, sortDirection: 'desc' },
+          { key: 'age', label: 'type', sortable: true, class: 'text-center' },
           {
             key: 'isActive',
-            label: 'Is Active責任者名',
+            label: 'IP',
    //         formatter: (value, key, item) => {
    //           return value ? 'Yes' : 'No'
    //         },
@@ -116,8 +131,8 @@
             sortByFormatted: true,
             filterByFormatted: true
           },
-          { key: 'phone', label: '電話番号', sortable: true, class: 'text-center' },
-          { key: 'actions', label: 'Actions操作' }
+          { key: 'phone', label: 'Port', sortable: true, class: 'text-center' },
+          { key: 'actions', label: '操作' }
         ],
        
         filter: null,
@@ -162,3 +177,26 @@
   
   }
 </script>
+<style>
+.item1{
+  font-size: 40px;
+  margin: 10px 0 0;
+}
+.item2{
+  margin: 10px 0 0;
+}
+
+.my-1{
+  margin: 190px 0 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+</style>

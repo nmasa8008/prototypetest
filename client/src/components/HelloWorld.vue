@@ -34,11 +34,11 @@
 </template>
 
 <script>
-
 import SideBar from './SideBar';
+
 export default {
   components: { SideBar },
-  name: 'HelloWorld',
+  name: 'Devicelist',
   props: {
     msg: String
   },
