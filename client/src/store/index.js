@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import user from './modules/user'
+import list from './modules/list'
 
 Vue.use(Vuex); // Vue で使えるようにアクティベート
 
@@ -11,6 +12,7 @@ const store = new Vuex.Store({
   devtools: process.env.NODE_ENV !== 'production',
   modules: {
     user,
+    list
   },
   // NOTE: このファイルでこれらが必要かどうかはよく分からない。
   /*

@@ -1,16 +1,12 @@
 <template>
-<div class="hello">
-  <div class="side-bar">
-    <SideBar/>
-  </div>
-  <div class="main">
+  <div class="hello">
+    <div class="side-bar">
+      <SideBar/>
+    </div>
+    <div class="main">
     <h1>{{ msg }}</h1>
-    <h2>Welcome{{responseData }}</h2>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
+    <h2>Welcome{{message }}</h2>
+
     <b-form @submit="onSubmit" @reset="onReset" @here="onHere" v-if="show">
       <b-form-group id="input-group-2" label="Your Name:" label-for="input-2">
         <b-form-input
@@ -22,59 +18,33 @@
       </b-form-group>
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
-<<<<<<< HEAD
-      <b-button type="here" variant="primary"></b-button>
-<<<<<<< HEAD
-      <router-link to="/Devicelist">こちらへ</router-link>
-=======
-      <b-button @click="login" type="button" variant="primary">login</b-button>
-      <b-button @click="logout" type="button" variant="primary">logout</b-button>
-      <router-link to="/login_check">ログインチェック</router-link>
->>>>>>> upstream/dev
-=======
-      <router-link to="/list">こちらへ</router-link>
->>>>>>> dev
+      <router-link to="/main">こちらへ</router-link>
     </b-form>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-
 import SideBar from './SideBar';
 export default {
   components: { SideBar },
-  name: 'HelloWorld',
+  name: 'List',
   props: {
     msg: String
   },
-  data() {
-    return {
-      form: {
-        name: '',
-      },
-      show: true,
-      message:'',
-    }
-  },
+   data() {
+      return {
+        form: {
+          name: '',
+        },
+        show: true,
+        message:'',
+      }
+    },
     methods: {
-      login() {
-        this.$store.dispatch('user/login')
-        this.$nextTick(() => {
-          alert(`you have logged in!\nplease click 'ログインチェック'`)
-          console.log('logged in')
-        })
-      },
-      logout() {
-        this.$store.dispatch('user/logout')
-        this.$nextTick(() => {
-          alert(`you have logged out`)
-          console.log('logged out')
-        })
-      },
       onSubmit(event) {
         event.preventDefault()
-          const created = async () => {
+         const created = async () => {
           const method = "POST";
           const body = JSON.stringify(this.form);
           const headers = {
@@ -83,19 +53,16 @@ export default {
           };
           const res = await fetch("index/test", {method, headers, body});
           if (res.ok) {
-            const responseData = await res.json();
-            // const parsMessage = JSON.parse(responseMessage)
-            console.log(responseData);
-            console.log(responseData[0]);
-            return responseData;
-
+            const responseMessage = await res.json();
+            const parsMessage = JSON.parse(responseMessage)
+            this.message = parsMessage.message;
           } else {
             this.message = 'failed';
           }
         }
         created();
+  },
       },
-    },
       onReset(event) {
         event.preventDefault()
         // Reset our form values
@@ -106,7 +73,7 @@ export default {
           this.show = true
         })
       },
-      onHere(event) {
+       onHere(event) {
         event.preventDefault()
         // Reset our form values
         this.form.name = ''
@@ -135,7 +102,6 @@ li {
 a {
   color: #42b983;
 }
-
 .hello {
   display: flex;
   justify-content: space-between;
