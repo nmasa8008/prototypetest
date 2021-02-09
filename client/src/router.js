@@ -3,6 +3,7 @@ import Router from "vue-router";
 import List from "./components/List.vue";
 import Main from "./components/Main.vue";
 import Hello from "./components/HelloWorld.vue";
+import CustomerList from "./components/CustomerList.vue";
 
 Vue.use(Router);
 export default new Router({
@@ -18,6 +19,10 @@ export default new Router({
       }, {
         path: '/main',
         component: Main
-      }
+      },
+      {
+        path: '/CustomerList',
+        component: CustomerList
+      },
   ]
 });
