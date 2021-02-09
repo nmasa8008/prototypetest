@@ -4,7 +4,7 @@
       <template >
         <div class="p-3">
           <p>
-           サイドバーだよ
+          サイドバーだよ
           </p>
           <nav class="mb-3">
             <b-nav vertical>
@@ -22,13 +22,13 @@
 <script>
 export default {
   name: 'SideBar',
-   methods: {
-     linkList(){
+  methods: {
+    linkList(){
       this.$router.push('/list')
-     },
-     linkHello(){
+    },
+    linkHello(){
       this.$router.push('/')
-     },
-   }
+    },
+  }
 }
 </script>
