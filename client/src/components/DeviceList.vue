@@ -16,7 +16,7 @@
     <b-row >
       <b-col lg="6" class="my-1">
         <b-form-group
-          label="Filter"
+          label="検索キーワード："
           label-for="filter-input"
           label-cols-sm="3"
           label-align-sm="right"
@@ -55,6 +55,7 @@
       show-empty
       small
       @filtered="onFiltered"
+      head-variant="light"
     >
       <template #cell(name)="row">
         {{ row.value.first }} {{ row.value.last }}
