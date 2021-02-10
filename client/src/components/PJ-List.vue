@@ -9,8 +9,8 @@
         <!-- User Interface controls -->
 
         <b-row class="mb-4">
-          <b-col md="6" class="p-2">【デバッグ用】PJ一覧</b-col>
-          <b-col md="4" class="ml-auto p-4"
+          <b-col md="6" class="p-2">PJ一覧</b-col>
+          <b-col md="6" class="ml-auto p-4"
             >cutomer(直打ち)
             <b-button href="/">ボタン</b-button>
           </b-col>
@@ -48,8 +48,8 @@
           </b-col>
         </b-row>
 
-        <b-row align-self="between">
-          <b-col md="4" class="p-5">
+        <b-row>
+          <b-col md="7" class="p-5">
             <b-button href="/">追加</b-button>
           </b-col>
         </b-row>
@@ -244,7 +244,7 @@ export default {
 }*/
 
 .clear {
-  margin-left: 60%;
+  margin-left: 40%;
 }
 
 .between {
@@ -278,7 +278,7 @@ export default {
 }
 
 .p-5 {
-  margin-top: 0px;
+  margin-left: 0%;
 }
 
 .mb-4 {
@@ -286,6 +286,6 @@ export default {
 }
 
 .ms-5 {
-  margin-left: 10%;
+  margin-left: 20%;
 }
 </style>
