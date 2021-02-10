@@ -7,18 +7,17 @@
     <div class="block">
       <b-container fluid class="block2">
         <!-- User Interface controls -->
-
         <b-row class="mb-4">
           <b-col md="6" class="p-2">【デバッグ用】顧客一覧</b-col>
-          <b-col md="4" class="ml-auto p-4"
-            >necicser(直打ち)
+          <b-col md="6" class="ml-auto p-4">
+            custmer01(直打ち)
             <b-button href="/">ボタン</b-button>
           </b-col>
         </b-row>
 
         <!--CSSうまくいかない-->
-        <b-row mb="4">
-          <b-col lg="6" class="ml-5">
+        <b-row ms="5">
+          <b-col md="12" lg="6" class="ms-5">
             <b-form-group
               label="検索キーワード："
               label-for="filter-input"
@@ -28,6 +27,7 @@
             >
               <b-input-group size="sm">
                 <b-form-input
+                  class="ms-2"
                   id="filter-input"
                   v-model="filter"
                   type="search"
@@ -149,11 +149,16 @@ export default {
         { isActive: false, age: 26, name: { first: "Mitzi", last: "Navarro" } },
       ],
       fields: [
-        { key: "name", label: "顧客名", sortable: true, sortDirection: "desc" },
-        { key: "age", label: "所在地", sortable: true, class: "text-center" },
+        {
+          key: "name",
+          label: "機器名",
+          sortable: true,
+          sortDirection: "desc",
+        },
+        { key: "age", label: "Type", sortable: true, class: "text-center" },
         {
           key: "isActive",
-          label: "責任者名",
+          label: "IP",
           //         formatter: (value, key, item) => {
           //           return value ? 'Yes' : 'No'
           //         },
@@ -163,7 +168,7 @@ export default {
         },
         {
           key: "phone",
-          label: "電話番号",
+          label: "Port",
           sortable: true,
           class: "text-center",
         },
@@ -247,10 +252,13 @@ export default {
 .main {
   display: flex;
   justify-content: space-between;
+  padding: 0%;
 }
+/*
 .saide {
   width: 20%;
 }
+*/
 /*
 .top {
   display: flex;
@@ -259,7 +267,7 @@ export default {
 }*/
 
 .block {
-  width: 90%;
+  width: calc(100% - 200px);
 }
 .block2 {
   width: 90%;
@@ -271,9 +279,14 @@ export default {
 
 .p-5 {
   margin-top: 0px;
+  margin-left: 1%;
 }
 
 .mb-4 {
   margin-left: 30%;
+}
+
+.ms-5 {
+  margin-left: 10%;
 }
 </style>

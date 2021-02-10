@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-slide visible='true'>
-      <template >
+  <div class="sidebar">
+    <b-sidebar
+      no-header
+      width="200px"
+      id="sidebar-no-header"
+      aria-labelledby="sidebar-no-header-title"
+      no-slide
+      visible="true"
+    >
+      <template>
         <div class="p-3">
-          <p>
-          （ここにロゴが入ります）
-          </p>
+          <p>（ここにロゴが入ります）</p>
           <nav class="mb-3">
             <b-nav vertical>
-              <b-nav-item active >Active</b-nav-item>
-              <b-nav-item  @click="linkList">list</b-nav-item>
-              <b-nav-item  @click="linkHello">HelloWorld</b-nav-item>
-              <b-nav-item  @click="linkCustomerlist">Customerlist</b-nav-item>
+              <b-nav-item active>Active</b-nav-item>
+              <b-nav-item @click="linkList">list</b-nav-item>
+              <b-nav-item @click="linkHello">HelloWorld</b-nav-item>
+              <b-nav-item @click="linkCustomerList">CustomerList</b-nav-item>
             </b-nav>
           </nav>
         </div>
@@ -22,17 +27,23 @@
 
 <script>
 export default {
-  name: 'SideBar',
+  name: "SideBar",
   methods: {
-    linkList(){
-      this.$router.push('/list')
+    linkList() {
+      this.$router.push("/list");
     },
-    linkHello(){
-      this.$router.push('/')
+    linkHello() {
+      this.$router.push("/");
     },
-    linkCustomerlist(){
-      this.$router.push('/CustomerList')
+    linkCustomerList() {
+      this.$router.push("/CustomerList");
     },
-  }
-}
+  },
+};
 </script>
+
+<style>
+.sidebar {
+  width: 10%;
+}
+</style>
