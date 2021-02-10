@@ -5,108 +5,106 @@
     </div>
 
     <div class="block">
-      <b-container fluid>
+      <b-container fluid class="block2">
         <!-- User Interface controls -->
-        <div class="myaccount">
-          project01
-          <b-button href="/">マイアカウントに遷移予定</b-button>
-        </div>
-        <!-- CSSうまくいかない-->
-        <div class="container">
-          <div class="item1">【デバッグ用】機器一覧</div>
-          <div class="item2">プロジェクトA</div>
-        </div>
+
+        <b-row class="mb-4">
+          <b-col md="6" class="p-2">【デバッグ用】PJ一覧</b-col>
+          <b-col md="4" class="ml-auto p-4"
+            >cutomer(直打ち)
+            <b-button href="/">ボタン</b-button>
+          </b-col>
+        </b-row>
 
         <!--CSSうまくいかない-->
-        <div>
-          <div>
-            <b-row>
-              <b-col lg="6" class="my-1">
-                <b-form-group
-                  label="検索キーワード："
-                  label-for="filter-input"
-                  label-cols-sm="3"
-                  label-align-sm="right"
-                  label-size="sm"
-                  class="mb-0"
-                >
-                  <b-input-group size="sm">
-                    <b-form-input
-                      id="filter-input"
-                      v-model="filter"
-                      type="search"
-                      placeholder="Type to Search"
-                    ></b-form-input>
+        <b-row ms="5">
+          <b-col md="12" lg="6" class="ms-5">
+            <b-form-group
+              label="検索キーワード："
+              label-for="filter-input"
+              label-cols-sm="3"
+              label-align-sm="right"
+              label-size="sm"
+            >
+              <b-input-group size="sm">
+                <b-form-input
+                  class="ms-2"
+                  id="filter-input"
+                  v-model="filter"
+                  type="search"
+                  placeholder="Type to Search"
+                ></b-form-input>
 
-                    <b-input-group-append>
-                      <b-button
-                        :disabled="!filter"
-                        @click="filter = ''"
-                        class="clear"
-                        >Clear</b-button
-                      >
-                    </b-input-group-append>
-                  </b-input-group>
-                </b-form-group>
-              </b-col>
-            </b-row>
-          </div>
-          <div class="tuika">
-            <b-button href="/">追加</b-button
-            ><!--編集画面に遷移-->
-          </div>
-          <!-- Main table element -->
-          <b-table
-            :items="items"
-            :fields="fields"
-            :filter="filter"
-            :filter-included-fields="filterOn"
-            :sort-by.sync="sortBy"
-            :sort-desc.sync="sortDesc"
-            :sort-direction="sortDirection"
-            stacked="md"
-            show-empty
-            small
-            @filtered="onFiltered"
-            head-variant="light"
-          >
-            <template #cell(name)="row">
-              {{ row.value.first }} {{ row.value.last }}
-            </template>
+                <b-input-group-append>
+                  <b-button
+                    :disabled="!filter"
+                    @click="filter = ''"
+                    class="clear"
+                    >Clear</b-button
+                  >
+                </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
 
-            <template #cell(actions)="row">
-              <b-button
-                size="sm"
-                @click="info(row.item, row.index, $event.target)"
-                class="mr-1"
-              >
-                Info modal(編集)
-              </b-button>
-              <b-button>削除</b-button>
-              <!--<b-button size="sm" @click="row.toggleDetails">
+        <b-row align-self="between">
+          <b-col md="4" class="p-5">
+            <b-button href="/">追加</b-button>
+          </b-col>
+        </b-row>
+        <!-- Main table element -->
+        <b-table
+          class="table table-bordered"
+          :items="items"
+          :fields="fields"
+          :filter="filter"
+          :filter-included-fields="filterOn"
+          :sort-by.sync="sortBy"
+          :sort-desc.sync="sortDesc"
+          :sort-direction="sortDirection"
+          stacked="md"
+          show-empty
+          small
+          @filtered="onFiltered"
+          head-variant="light"
+        >
+          <template #cell(name)="row">
+            {{ row.value.first }} {{ row.value.last }}
+          </template>
+
+          <template #cell(actions)="row">
+            <b-button
+              size="sm"
+              @click="info(row.item, row.index, $event.target)"
+              class="mr-1"
+            >
+              Info modal(編集)
+            </b-button>
+            <b-button>削除</b-button>
+            <!--<b-button size="sm" @click="row.toggleDetails">
           {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
         </b-button>-->
-            </template>
+          </template>
 
-            <!--<template #row-details="row">
+          <!--<template #row-details="row">
         <b-card>
           <ul>
             <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
           </ul>
         </b-card>
       </template> -->
-          </b-table>
+        </b-table>
 
-          <!-- Info modal -->
-          <b-modal
-            :id="infoModal.id"
-            :title="infoModal.title"
-            ok-only
-            @hide="resetInfoModal"
-          >
-            <pre>{{ infoModal.content }}</pre>
-          </b-modal>
-        </div>
+        <!-- Info modal -->
+        <b-modal
+          :id="infoModal.id"
+          :title="infoModal.title"
+          ok-only
+          @hide="resetInfoModal"
+        >
+          <pre>{{ infoModal.content }}</pre>
+        </b-modal>
       </b-container>
     </div>
   </div>
@@ -152,11 +150,16 @@ export default {
         { isActive: false, age: 26, name: { first: "Mitzi", last: "Navarro" } },
       ],
       fields: [
-        { key: "name", label: "機器名", sortable: true, sortDirection: "desc" },
-        { key: "age", label: "type", sortable: true, class: "text-center" },
+        {
+          key: "name",
+          label: "プロジェクト名",
+          sortable: true,
+          sortDirection: "desc",
+        },
+        { key: "age", label: "場所", sortable: true, class: "text-center" },
         {
           key: "isActive",
-          label: "IP",
+          label: "責任者名",
           //         formatter: (value, key, item) => {
           //           return value ? 'Yes' : 'No'
           //         },
@@ -164,7 +167,12 @@ export default {
           sortByFormatted: true,
           filterByFormatted: true,
         },
-        { key: "phone", label: "Port", sortable: true, class: "text-center" },
+        {
+          key: "phone",
+          label: "電話番号",
+          sortable: true,
+          class: "text-center",
+        },
         { key: "actions", label: "操作" },
       ],
 
@@ -209,15 +217,16 @@ export default {
   },
 };
 </script>
+
 <style>
+/*
 .item1 {
   margin-right: 0%;
   width: 100%;
-  /* text-align: left; */
   font-size: 40px;
+}*/
+/* margin: 10px 0 0; */
 
-  /* margin: 10px 0 0; */
-}
 .item2 {
   /* margin: 30px 0 0; */
   margin-left: 0%;
@@ -228,16 +237,11 @@ export default {
 .my-1 {
   margin: 190px 0 0;
 }
-.tuika {
-  margin-right: 60%;
-  font-size: 40px;
-  margin-top: 2%;
-  margin-bottom: 2%;
-}
+/*
 .myaccount {
-  margin-left: 60%;
-  margin-bottom: 5%;
-}
+  margin-left: 30%;
+  margin-bottom: 0%;
+}*/
 
 .clear {
   margin-left: 60%;
@@ -250,15 +254,38 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+/*
 .saide {
   width: 20%;
 }
-.container {
+*/
+/*
+.top {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5%;
-}
+}*/
+
 .block {
+  width: calc(100% - 200px);
+}
+.block2 {
   width: 90%;
+}
+
+.p-2 {
+  font-size: 3rem;
+}
+
+.p-5 {
+  margin-top: 0px;
+}
+
+.mb-4 {
+  margin-left: 30%;
+}
+
+.ms-5 {
+  margin-left: 10%;
 }
 </style>

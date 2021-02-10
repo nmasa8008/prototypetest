@@ -22,7 +22,7 @@ export default new Router({
       component: Main,
     },
     {
-      path: "/PJ-List",
+      path: "/pj-list",
       component: PJList,
     },
   ],

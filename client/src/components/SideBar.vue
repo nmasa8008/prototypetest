@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="sidebar">
     <b-sidebar
+      no-header
+      width="200px"
       id="sidebar-no-header"
       aria-labelledby="sidebar-no-header-title"
       no-slide
@@ -34,8 +36,14 @@ export default {
       this.$router.push("/");
     },
     linkPJList() {
-      this.$router.push("/PJ-List");
+      this.$router.push("/pj-list");
     },
   },
 };
 </script>
+
+<style>
+.sidebar {
+  width: 10%;
+}
+</style>
