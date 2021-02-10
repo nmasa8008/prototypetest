@@ -10,22 +10,21 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   routes: [
-
-       {
-        path: '/list',
-        component: List
-      },
-      {
-        path: '/',
-        component: Hello
-      }, {
-        path: '/main',
-        component: Main
-      },
-      {
-        path: '/DeviceList',
-        component: Devicelist
-      }
-
-  ]
+    {
+      path: "/list",
+      component: List,
+    },
+    {
+      path: "/",
+      component: Hello,
+    },
+    {
+      path: "/main",
+      component: Main,
+    },
+    {
+      path: "/DeviceList",
+      component: Devicelist,
+    },
+  ],
 });
