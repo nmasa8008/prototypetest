@@ -16,7 +16,7 @@
               <b-nav-item active>Active</b-nav-item>
               <b-nav-item @click="linkList">list</b-nav-item>
               <b-nav-item @click="linkHello">HelloWorld</b-nav-item>
-              <b-nav-item @click="linkPJList">PJ-List</b-nav-item>
+              <b-nav-item @click="linkPjList">PjList</b-nav-item>
             </b-nav>
           </nav>
         </div>
@@ -35,8 +35,8 @@ export default {
     linkHello() {
       this.$router.push("/");
     },
-    linkPJList() {
-      this.$router.push("/pj-list");
+    linkPjList() {
+      this.$router.push("/pjlist");
     },
   },
 };

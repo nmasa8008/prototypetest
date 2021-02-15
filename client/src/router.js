@@ -3,7 +3,7 @@ import Router from "vue-router";
 import List from "./components/List.vue";
 import Main from "./components/Main.vue";
 import Hello from "./components/HelloWorld.vue";
-import PJList from "./components/PJ-List.vue";
+import PjList from "./components/PjList.vue";
 
 Vue.use(Router);
 export default new Router({
@@ -22,8 +22,8 @@ export default new Router({
       component: Main,
     },
     {
-      path: "/pj-list",
-      component: PJList,
+      path: "/pjlist",
+      component: PjList,
     },
   ],
 });
