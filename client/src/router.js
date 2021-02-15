@@ -5,6 +5,7 @@ import List from "./components/List.vue";
 import Main from "./components/Main.vue";
 import Hello from "./components/HelloWorld.vue";
 import Devicelist from "./components/DeviceList.vue";
+import DeviceEntry from "./components/DeviceEntry.vue";
 
 Vue.use(Router);
 export default new Router({
@@ -25,6 +26,10 @@ export default new Router({
     {
       path: "/DeviceList",
       component: Devicelist,
+    },
+    {
+      path: "/DeviceEntry",
+      component: DeviceEntry,
     },
   ],
 });
